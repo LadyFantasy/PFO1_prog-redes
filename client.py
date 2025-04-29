@@ -17,15 +17,15 @@ def client_initialize():
             message = input("Escriba un mensaje. Si quiere salir, escriba 'éxito': ")
             
             if message == "":
-                print("El message está vacío. Por favor, vuelva a intentarlo.")
+                print("El mensaje está vacío. Vuelva a intentarlo")
                 continue
             
             if message.lower() in ["exito", "éxito"]:
                 break
 
-            cliente.sendall(message.encode('utf-8'))
+            cliente.sendall(message.encode())
             
-            respuesta = cliente.recv(1024).decode('utf-8')
+            respuesta = cliente.recv(1024).decode()
             
             print(f"Respuesta del servidor: {respuesta}")
 

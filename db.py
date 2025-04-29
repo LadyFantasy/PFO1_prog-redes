@@ -34,7 +34,6 @@ def save_msg(contenido, ip_cliente):
         
         fecha_envio = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         
-       
         cursor.execute('''
             INSERT INTO mensajes (contenido, fecha_envio, ip_cliente)
             VALUES (?, ?, ?)

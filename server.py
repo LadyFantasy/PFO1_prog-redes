@@ -18,7 +18,7 @@ def socket_initialize():
 def client(client_socket, direction):
     try:
         while True:
-            mensaje = client_socket.recv(1024).decode('utf-8')
+            mensaje = client_socket.recv(1024).decode()
             if not mensaje:
                 break
             print(f"Mensaje recibido de {direction}: {mensaje}")
@@ -27,9 +27,9 @@ def client(client_socket, direction):
             if fecha_envio:
                 respuesta = f"Mensaje recibido: {fecha_envio}"
             else:
-                respuesta = "Error: no se pudo guardar el mensaje."
+                respuesta = "Error: no se pudo guardar el mensaje"
 
-            client_socket.sendall(respuesta.encode('utf-8'))
+            client_socket.sendall(respuesta.encode())
             
     except socket.error as e:
         print(f"Error en la conexión con {direction}: {e}")
